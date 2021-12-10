@@ -1,22 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-
+import DefExp from "./defexp.js";
+import {Name, Surname, City} from "./nameexp.js";
+let imePrezime = DefExp();
+let ime = imePrezime.firstName;
+let prezime = imePrezime.lastName;
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {Name()}, {Surname()}, {City()} povučeno iz name export modula.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          {ime} {prezime} povučeno iz default export modula.
+        </p>
+      
       </header>
     </div>
   );
